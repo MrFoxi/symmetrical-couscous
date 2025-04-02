@@ -16,7 +16,7 @@ type Exercise struct {
 func GenerateExercise(step int) Exercise {
 	switch step {
 	case 1:
-		return generateBasicAddSub(0, 10)
+		return /* generateBasicAddSub(0, 10) */generateMatrix()
 	case 2:
 		return generateBasicAddSub(20, 100)
 	case 3:
@@ -38,10 +38,10 @@ func generateBasicAddSub(min int, max int) Exercise {
 	var answer float64
 
 	if op == 0 {
-		question = fmt.Sprintf("Combien font %d + %d ?", a, b)
+		question = fmt.Sprintf("\nCombien font %d + %d ?", a, b)
 		answer = float64(a + b)
 	} else {
-		question = fmt.Sprintf("Combien font %d - %d ?", a, b)
+		question = fmt.Sprintf("\nCombien font %d - %d ?", a, b)
 		answer = float64(a - b)
 	}
 
@@ -56,10 +56,10 @@ func generateMultDiv() Exercise {
 	var answer float64
 
 	if op == 0 {
-		question = fmt.Sprintf("Combien font %d * %d ?", a, b)
+		question = fmt.Sprintf("\nCombien font %d * %d ?", a, b)
 		answer = float64(a * b)
 	} else {
-		question = fmt.Sprintf("Combien font %d / %d ?", a*b, a)
+		question = fmt.Sprintf("\nCombien font %d / %d ?", a*b, a)
 		answer = float64(b)
 	}
 
@@ -90,7 +90,7 @@ func generateMatrix() Exercise {
 	}
 
 	formattedAnswer := fmt.Sprintf("[[%d %d] [%d %d]]", result[0][0], result[0][1], result[1][0], result[1][1])
-	question := fmt.Sprintf("Additionne ces matrices 2x2 :\nA = %v\nB = %v\nRéponds sous le format : [[a b] [c d]]", a, b)
+	question := fmt.Sprintf("\nAdditionne ces matrices 2x2 :\nA = \n( %d   %d )\n( %d   %d ) \nB = \n( %d   %d )\n( %d   %d )\nRéponds sous le format : [[a b] [c d]]", a[0][0], a[0][1], a[1][0], a[1][1], b[0][0], b[0][1], b[1][0], b[1][1])
 
 	return Exercise{Question: question, AnswerStr: formattedAnswer}
 }
