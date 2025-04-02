@@ -14,14 +14,26 @@ var (
 	lastFeedback    string
 )
 
+<<<<<<< HEAD:Ancien projet/main.go
 // func main() {
 // 	http.HandleFunc("/", serveQuiz)
 // 	http.HandleFunc("/check", checkAnswer)
 // 	http.HandleFunc("/restart", restartQuiz)
+=======
+func main() {
+	http.HandleFunc("/", serveHome)
+	http.HandleFunc("/quiz", serveQuiz)
+	http.HandleFunc("/restart", restartQuiz)
+>>>>>>> 2696e74 (Evolution web application):main.go
 
 // 	fmt.Println("🌐 Serveur lancé sur http://localhost:8080")
 // 	http.ListenAndServe(":8080", nil)
 // }
+
+func serveHome(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("html/index.html"))
+	tmpl.Execute(w, nil)
+}
 
 func getStep(question int) int {
 	switch {
