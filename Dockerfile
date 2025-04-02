@@ -1,7 +1,7 @@
 FROM golang:latest
 
 # Installer bash et autres outils utiles
-RUN apt-get update && apt-get install -y bash
+RUN apt-get update && apt-get install -y bash hyperfine
 
 WORKDIR /mathquizzer
 
