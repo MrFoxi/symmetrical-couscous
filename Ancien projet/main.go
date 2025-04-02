@@ -14,17 +14,19 @@ var (
 	lastFeedback    string
 )
 
-<<<<<<< HEAD:Ancien projet/main.go
 // func main() {
 // 	http.HandleFunc("/", serveQuiz)
 // 	http.HandleFunc("/check", checkAnswer)
 // 	http.HandleFunc("/restart", restartQuiz)
+<<<<<<< HEAD
 =======
 func main() {
 	http.HandleFunc("/", serveHome)
 	http.HandleFunc("/quiz", serveQuiz)
 	http.HandleFunc("/restart", restartQuiz)
 >>>>>>> 2696e74 (Evolution web application):main.go
+=======
+>>>>>>> accee7e (format matrice revisité)
 
 // 	fmt.Println("🌐 Serveur lancé sur http://localhost:8080")
 // 	http.ListenAndServe(":8080", nil)

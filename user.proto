@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+syntax = "proto3";
+
+service UserService {
+
+	rpc GetUser (UserRequest) returns (UserResponse);
+	message UserRequest { string user_id = 1 ;}
+	message UserResponse { string name = 1 ; int32 age = 2;}
+
+
+}
